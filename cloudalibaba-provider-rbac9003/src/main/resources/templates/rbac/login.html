@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>登录</title>
+  <link rel="stylesheet" href="/static/layui/css/layui.css">
+  <style>
+    .login-main{
+      width: 500px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body style="background-color:#dddddd;">
+<div class="layui-container fly-marginTop" style="text-align: center">
+  <div class="fly-panel fly-panel-user login-main" pad20>
+    <div style="margin-top: 35%;background-color:white;" class="layui-tab layui-tab-brief" lay-filter="user">
+      <ul class="layui-tab-title">
+        <li class="layui-this">登录</li>
+      </ul>
+      <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
+        <div class="layui-tab-item layui-show">
+          <div style="text-align: center" class="layui-form layui-form-pane">
+            <form method="post" action="/rbac/login">
+              <div style="margin-left: 20%" class="layui-form-item">
+                <label for="username" class="layui-form-label">用户名</label>
+                <div class="layui-input-inline">
+                  <input type="text" id="username" name="username" required autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div style="margin-left: 20%" class="layui-form-item">
+                <label for="password" class="layui-form-label">密码</label>
+                <div class="layui-input-inline">
+                  <input type="password" id="password" name="password" required autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <button type="submit" class="layui-btn">立即登录</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/static/layui/layui.js"></script>
+<script>
+layui.config({
+  version: "3.0.0"
+  ,base: '/static/mods/'
+}).extend({
+  fly: 'index'
+}).use('fly');
+</script>
+
+</body>
+</html>
