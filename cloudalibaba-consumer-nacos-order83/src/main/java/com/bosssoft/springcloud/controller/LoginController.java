@@ -1,7 +1,7 @@
 package com.bosssoft.springcloud.controller;
 
 import com.bosssoft.springcloud.entity.dto.LoginDTO;
-import com.bosssoft.springcloud.entity.po.UserInfo;
+import com.bosssoft.springcloud.entity.po.UserInfoPO;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
@@ -27,7 +27,7 @@ import java.util.List;
  */
 @Controller
 @Slf4j
-public class OrderNacosController
+public class LoginController
 {
     @Resource
     private RestTemplate restTemplate;
@@ -39,7 +39,7 @@ public class OrderNacosController
 
     @PostMapping("/consumer/login")
     public String login(String username, String password){
-        UserInfo userInfo = new UserInfo();
+        UserInfoPO userInfo = new UserInfoPO();
         userInfo.setName(username);
         userInfo.setPassword(password);
         this.loginDTO = restTemplate.postForObject(serverURL + "/login", userInfo, LoginDTO.class);
@@ -66,7 +66,6 @@ public class OrderNacosController
         System.out.println("id:"+claims.getId());
         System.out.println("subject:"+claims.getSubject());
         System.out.println("IssuedAt:"+claims.getIssuedAt());
-
     }
 
 }
