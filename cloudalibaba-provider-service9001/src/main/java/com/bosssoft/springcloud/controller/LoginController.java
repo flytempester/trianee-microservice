@@ -1,7 +1,7 @@
 package com.bosssoft.springcloud.controller;
 
-import com.bosssoft.springcloud.entity.DTO.LoginDTO;
-import com.bosssoft.springcloud.entity.PO.UserInfoPO;
+import com.bosssoft.springcloud.entity.dto.LoginDTO;
+import com.bosssoft.springcloud.entity.po.UserInfoPO;
 import com.bosssoft.springcloud.service.impl.LoginServiceImpl;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

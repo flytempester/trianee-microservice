@@ -1,8 +1,8 @@
 package com.bosssoft.springcloud.service.impl;
 
-import com.bosssoft.springcloud.DAO.mapper.UserInfoMapper;
-import com.bosssoft.springcloud.entity.DTO.LoginDTO;
-import com.bosssoft.springcloud.entity.PO.UserInfoPO;
+import com.bosssoft.springcloud.dao.mapper.UserInfoMapper;
+import com.bosssoft.springcloud.entity.dto.LoginDTO;
+import com.bosssoft.springcloud.entity.po.UserInfoPO;
 import com.bosssoft.springcloud.service.LoginService;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
