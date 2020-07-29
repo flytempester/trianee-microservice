@@ -1,9 +1,8 @@
 package com.bosssoft.RBAC.service.impl;
 
-import com.bosssoft.RBAC.PO.MenuInfo;
-import com.bosssoft.RBAC.PO.RoleInfo;
-import com.bosssoft.RBAC.PO.RoleMenu;
-import com.bosssoft.RBAC.PO.UserRole;
+import com.bosssoft.RBAC.PO.MenuInfoPO;
+import com.bosssoft.RBAC.PO.RoleMenuPO;
+import com.bosssoft.RBAC.PO.UserRolePO;
 import com.bosssoft.RBAC.DAO.mapper.MenuInfoMapper;
 import com.bosssoft.RBAC.DAO.mapper.RoleMenuMapper;
 import com.bosssoft.RBAC.DAO.mapper.UserRoleMapper;
@@ -32,34 +31,34 @@ public class MenuServiceImpl implements MenuService {
 
     @Override
     public List<BigInteger> getRoleIdsByUserId(BigInteger uid){
-        UserRole userRole = new UserRole();
-        userRole.setUserId(uid);
-        List<UserRole> userRoles = userRoleMapper.select(userRole);
+        UserRolePO userRolePO = new UserRolePO();
+        userRolePO.setUserId(uid);
+        List<UserRolePO> userRolePOS = userRoleMapper.select(userRolePO);
         ArrayList<BigInteger> roleIds = new ArrayList<>();
-        for (UserRole selectedUserRole : userRoles) {
-            roleIds.add(selectedUserRole.getRoleId());
+        for (UserRolePO selectedUserRolePO : userRolePOS) {
+            roleIds.add(selectedUserRolePO.getRoleId());
         }
         return roleIds;
     }
 
     @Override
-    public List<MenuInfo> getMenusByRoleIds(List<BigInteger> roleIds){
-        RoleMenu roleMenu = new RoleMenu();
-        HashSet<MenuInfo> menuInfos = new HashSet<>();
-        MenuInfo menuInfo = new MenuInfo();
+    public List<MenuInfoPO> getMenusByRoleIds(List<BigInteger> roleIds){
+        RoleMenuPO roleMenu = new RoleMenuPO();
+        HashSet<MenuInfoPO> menuInfoPOS = new HashSet<>();
+        MenuInfoPO menuInfoPO = new MenuInfoPO();
         for (BigInteger roleId : roleIds) {
             roleMenu.setRoleId(roleId);
-            List<RoleMenu> roleMenus = roleMenuMapper.select(roleMenu);
-            for (RoleMenu selectedRoleMenu : roleMenus) {
-                menuInfo.setId(selectedRoleMenu.getMenuId());
-                menuInfos.add(menuInfoMapper.selectOne(menuInfo));
+            List<RoleMenuPO> roleMenus = roleMenuMapper.select(roleMenu);
+            for (RoleMenuPO selectedRoleMenu : roleMenus) {
+                menuInfoPO.setId(selectedRoleMenu.getMenuId());
+                menuInfoPOS.add(menuInfoMapper.selectOne(menuInfoPO));
             }
         }
-        return new ArrayList<>(menuInfos);
+        return new ArrayList<>(menuInfoPOS);
     }
 
     @Override
-    public List<MenuInfo> getMenusByUserId(BigInteger uid){
+    public List<MenuInfoPO> getMenusByUserId(BigInteger uid){
         List<BigInteger> roleIds = getRoleIdsByUserId(uid);
         return getMenusByRoleIds(roleIds);
     }

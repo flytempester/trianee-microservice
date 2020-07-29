@@ -2,7 +2,7 @@ package com.bosssoft.RBAC.service.impl;
 
 import com.bosssoft.RBAC.DAO.mapper.UserInfoMapper;
 import com.bosssoft.RBAC.DTO.UserDTO;
-import com.bosssoft.RBAC.PO.UserInfo;
+import com.bosssoft.RBAC.PO.UserInfoPO;
 import com.bosssoft.RBAC.service.UserService;
 import org.springframework.stereotype.Service;
 
@@ -22,10 +22,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDTO[] getAllUsers() {
-        List<UserInfo> userInfos = userInfoMapper.selectAll();
+        List<UserInfoPO> userInfoPOS = userInfoMapper.selectAll();
         List<UserDTO> userDTOs = new ArrayList<>();
-        for (UserInfo userInfo : userInfos) {
-            UserDTO userDTO = new UserDTO(userInfo.getId(), userInfo.getPassword());
+        for (UserInfoPO userInfoPO : userInfoPOS) {
+            UserDTO userDTO = new UserDTO(userInfoPO.getId(), userInfoPO.getPassword());
             userDTOs.add(userDTO);
         }
         return (UserDTO[]) userDTOs.toArray();

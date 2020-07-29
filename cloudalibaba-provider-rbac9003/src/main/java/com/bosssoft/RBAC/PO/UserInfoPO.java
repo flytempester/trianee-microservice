@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
 
@@ -13,7 +14,8 @@ import java.time.LocalDateTime;
  * @description
  */
 @Data
-public class UserInfo {
+@Table(name = "user_info")
+public class UserInfoPO {
     @Id
     private BigInteger id;
     @Column

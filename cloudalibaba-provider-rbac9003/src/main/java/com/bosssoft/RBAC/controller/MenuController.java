@@ -1,12 +1,11 @@
 package com.bosssoft.RBAC.controller;
 
-import com.bosssoft.RBAC.PO.MenuInfo;
-import com.bosssoft.RBAC.service.LoginService;
+import com.bosssoft.RBAC.PO.MenuInfoPO;
+
 import com.bosssoft.RBAC.service.MenuService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -19,16 +18,14 @@ import java.util.List;
  * @description
  */
 @Controller
-public class LoginController {
+public class MenuController {
 
-    @Resource
-    private LoginService loginService;
     @Resource
     private MenuService menuService;
 
     @GetMapping("/getMenus/{id}")
     @ResponseBody
-    public List<MenuInfo> getMenus(@PathVariable("id") BigInteger id)
+    public List<MenuInfoPO> getMenus(@PathVariable("id") BigInteger id)
     {
         return menuService.getMenusByUserId(id);
     }
