@@ -3,7 +3,7 @@ package com.bosssoft.rbac.service.impl;
 import com.bosssoft.rbac.dao.mapper.UserInfoMapper;
 import com.bosssoft.rbac.entity.dto.UserDTO;
 import com.bosssoft.rbac.entity.po.UserInfoPO;
-import com.bosssoft.rbac.service.UserService;
+import com.bosssoft.rbac.service.UserInfoService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -16,7 +16,7 @@ import java.util.List;
  * @description
  */
 @Service
-public class UserServiceImpl implements UserService {
+public class UserInfoServiceImpl implements UserInfoService {
     @Resource
     private UserInfoMapper userInfoMapper;
 
