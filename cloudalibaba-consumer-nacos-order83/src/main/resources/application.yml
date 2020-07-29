@@ -1,0 +1,29 @@
+server:
+  port: 83
+---
+spring:
+  application:
+    name: nacos-order-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+---
+service-url:
+  nacos-user-service: http://nacos-gateway
+---
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/rbac?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: root
+---
+spring:
+  mvc:
+    static-path-pattern: /static/**    #静态资源的请求方式
+  resources:
+    static-locations: classpath:/static/  # 静态资源的配置位置，可以写成一个数组配置多个目
+
+
+

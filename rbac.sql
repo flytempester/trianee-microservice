@@ -10,36 +10,17 @@ Target Server Type    : MYSQL
 Target Server Version : 50722
 File Encoding         : 65001
 
-Date: 2020-07-27 20:17:01
+Date: 2020-07-29 10:29:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for admin
--- ----------------------------
-DROP TABLE IF EXISTS `admin`;
-CREATE TABLE `admin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `update_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of admin
--- ----------------------------
-INSERT INTO `admin` VALUES ('1', 'admin', 'admin', null, null);
 
 -- ----------------------------
 -- Table structure for menu_info
 -- ----------------------------
 DROP TABLE IF EXISTS `menu_info`;
 CREATE TABLE `menu_info` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `update_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
@@ -59,7 +40,7 @@ INSERT INTO `menu_info` VALUES ('4', '修改', null, null);
 -- ----------------------------
 DROP TABLE IF EXISTS `role_info`;
 CREATE TABLE `role_info` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `update_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
@@ -78,9 +59,9 @@ INSERT INTO `role_info` VALUES ('3', 'superAdmin', null, null);
 -- ----------------------------
 DROP TABLE IF EXISTS `role_menu`;
 CREATE TABLE `role_menu` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `role_id` int(11) DEFAULT NULL,
-  `menu_id` int(11) DEFAULT NULL,
+  `id` bigint(11) unsigned NOT NULL AUTO_INCREMENT,
+  `role_id` bigint(11) unsigned DEFAULT NULL,
+  `menu_id` bigint(11) unsigned DEFAULT NULL,
   `create_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `update_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
@@ -103,7 +84,7 @@ INSERT INTO `role_menu` VALUES ('8', '3', '4', null, null);
 -- ----------------------------
 DROP TABLE IF EXISTS `user_info`;
 CREATE TABLE `user_info` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
@@ -125,10 +106,10 @@ INSERT INTO `user_info` VALUES ('4', 'ml', 'ml', null, null);
 -- ----------------------------
 DROP TABLE IF EXISTS `user_role`;
 CREATE TABLE `user_role` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
-  `role_id` int(11) DEFAULT NULL,
-  `creare_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `id` bigint(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(11) unsigned DEFAULT NULL,
+  `role_id` bigint(11) unsigned DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `update_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;

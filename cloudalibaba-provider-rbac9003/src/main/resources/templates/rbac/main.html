@@ -59,18 +59,22 @@
 <script src="/static/jquery/jquery-2.1.1.min.js"></script>
 <script src="/static/layui/layui.js" charset="utf-8"></script>
 <script>
+
+    var users = null;
+
     layui.use('transfer', function(){
         var transfer = layui.transfer;
+
+        $.get("/getAllUsers",function (data) {
+            users = data;
+        })
 
         //渲染
         transfer.render({
             elem: '#userList'  //绑定元素
             ,title:["未分配用户","已分配用户"]
-            ,data: [
-                {"value": "1", "title": "李白", "disabled": "", "checked": ""}
-                ,{"value": "2", "title": "杜甫", "disabled": "", "checked": ""}
-                ,{"value": "3", "title": "贤心", "disabled": "", "checked": ""}
-            ]
+            ,data: users
+            ,value:[1,2]
             ,showSearch:true
             ,id: 'demo1' //定义索引
         });

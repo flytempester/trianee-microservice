@@ -1,8 +1,8 @@
 package com.bosssoft.RBAC.controller;
 
 import com.bosssoft.RBAC.PO.MenuInfo;
-import com.bosssoft.RBAC.service.MainService;
-import com.bosssoft.RBAC.service.impl.LoginServiceImpl;
+import com.bosssoft.RBAC.service.LoginService;
+import com.bosssoft.RBAC.service.MenuService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.math.BigInteger;
 import java.util.List;
 
 /**
@@ -21,15 +22,15 @@ import java.util.List;
 public class LoginController {
 
     @Resource
-    private LoginServiceImpl loginService;
+    private LoginService loginService;
     @Resource
-    private MainService mainService;
+    private MenuService menuService;
 
     @GetMapping("/payment/getMenus/{id}")
     @ResponseBody
-    public List<MenuInfo> getMenus(@PathVariable("id")Integer id)
+    public List<MenuInfo> getMenus(@PathVariable("id") BigInteger id)
     {
-        return mainService.getMenusByUserId(id);
+        return menuService.getMenusByUserId(id);
     }
 
     @PostMapping("/rbac/login")

@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 
 /**
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 @Data
 public class RoleInfo {
     @Id
-    private Integer id;
+    private BigInteger id;
     @Column
     private String name;
     @Column

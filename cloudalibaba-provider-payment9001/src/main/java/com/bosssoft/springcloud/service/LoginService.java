@@ -1,7 +1,0 @@
-package com.bosssoft.springcloud.service;
-
-import javax.servlet.http.HttpSession;
-
-public interface LoginService {
-    String login(String username, String password, HttpSession session);
-}

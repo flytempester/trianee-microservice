@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 
 /**
@@ -16,7 +17,7 @@ import java.time.LocalDateTime;
 @Table(name = "admin")
 public class Admin {
     @Id
-    private Integer id;
+    private BigInteger id;
     @Column
     private String name;
     @Column
