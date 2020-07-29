@@ -1,6 +1,6 @@
 package com.bosssoft.RBAC.controller;
 
-import com.bosssoft.RBAC.PO.MenuInfoPO;
+import com.bosssoft.RBAC.entity.PO.MenuInfoPO;
 
 import com.bosssoft.RBAC.service.MenuService;
 import org.springframework.stereotype.Controller;

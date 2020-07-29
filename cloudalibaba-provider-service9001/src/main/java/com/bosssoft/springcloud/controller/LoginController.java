@@ -1,7 +1,7 @@
 package com.bosssoft.springcloud.controller;
 
-import com.bosssoft.springcloud.DTO.LoginDTO;
-import com.bosssoft.springcloud.PO.UserInfo;
+import com.bosssoft.springcloud.entity.DTO.LoginDTO;
+import com.bosssoft.springcloud.entity.PO.UserInfoPO;
 import com.bosssoft.springcloud.service.impl.LoginServiceImpl;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -37,8 +37,8 @@ public class LoginController {
 
     @RequestMapping("/login")
     @ResponseBody
-    public LoginDTO login(@RequestBody UserInfo userInfo) {
-        return loginService.login(userInfo.getName(),userInfo.getPassword());
+    public LoginDTO login(@RequestBody UserInfoPO userInfoPO) {
+        return loginService.login(userInfoPO.getName(),userInfoPO.getPassword());
     }
 
 

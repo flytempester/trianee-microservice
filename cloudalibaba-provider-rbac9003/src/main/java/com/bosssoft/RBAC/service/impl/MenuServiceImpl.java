@@ -1,8 +1,8 @@
 package com.bosssoft.RBAC.service.impl;
 
-import com.bosssoft.RBAC.PO.MenuInfoPO;
-import com.bosssoft.RBAC.PO.RoleMenuPO;
-import com.bosssoft.RBAC.PO.UserRolePO;
+import com.bosssoft.RBAC.entity.PO.MenuInfoPO;
+import com.bosssoft.RBAC.entity.PO.RoleMenuPO;
+import com.bosssoft.RBAC.entity.PO.UserRolePO;
 import com.bosssoft.RBAC.DAO.mapper.MenuInfoMapper;
 import com.bosssoft.RBAC.DAO.mapper.RoleMenuMapper;
 import com.bosssoft.RBAC.DAO.mapper.UserRoleMapper;

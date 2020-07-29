@@ -1,6 +1,6 @@
 package com.bosssoft.RBAC.service;
 
-import com.bosssoft.RBAC.PO.MenuInfoPO;
+import com.bosssoft.RBAC.entity.PO.MenuInfoPO;
 
 import java.math.BigInteger;
 import java.util.List;

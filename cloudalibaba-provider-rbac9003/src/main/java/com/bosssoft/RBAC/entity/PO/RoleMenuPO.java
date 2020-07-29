@@ -1,4 +1,4 @@
-package com.bosssoft.RBAC.PO;
+package com.bosssoft.RBAC.entity.PO;
 
 import lombok.Data;
 
@@ -14,14 +14,14 @@ import java.time.LocalDateTime;
  * @description
  */
 @Data
-@Table(name = "user_info")
-public class UserInfoPO {
+@Table(name = "role_menu")
+public class RoleMenuPO {
     @Id
     private BigInteger id;
     @Column
-    private String name;
+    private BigInteger roleId;
     @Column
-    private String password;
+    private BigInteger menuId;
     @Column
     private LocalDateTime createTime;
     @Column

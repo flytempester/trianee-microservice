@@ -1,4 +1,4 @@
-package com.bosssoft.springcloud.PO;
+package com.bosssoft.springcloud.entity.PO;
 
 import lombok.Data;
 

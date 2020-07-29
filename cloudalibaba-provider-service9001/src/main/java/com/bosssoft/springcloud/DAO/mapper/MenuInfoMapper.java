@@ -1,8 +1,8 @@
 package com.bosssoft.springcloud.DAO.mapper;
 
 
-import com.bosssoft.springcloud.PO.MenuInfo;
+import com.bosssoft.springcloud.entity.PO.MenuInfoPO;
 import tk.mybatis.mapper.common.Mapper;
 
-public interface MenuInfoMapper extends Mapper<MenuInfo> {
+public interface MenuInfoMapper extends Mapper<MenuInfoPO> {
 }

@@ -1,8 +1,8 @@
 package com.bosssoft.springcloud.DAO.mapper;
 
 
-import com.bosssoft.springcloud.PO.UserRole;
+import com.bosssoft.springcloud.entity.PO.UserRolePO;
 import tk.mybatis.mapper.common.Mapper;
 
-public interface UserRoleMapper extends Mapper<UserRole> {
+public interface UserRoleMapper extends Mapper<UserRolePO> {
 }

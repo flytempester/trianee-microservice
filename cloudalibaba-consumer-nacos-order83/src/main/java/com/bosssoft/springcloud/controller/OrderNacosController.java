@@ -1,9 +1,7 @@
 package com.bosssoft.springcloud.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.bosssoft.springcloud.DTO.LoginDTO;
-import com.bosssoft.springcloud.PO.MenuInfo;
-import com.bosssoft.springcloud.PO.UserInfo;
+import com.bosssoft.springcloud.entity.DTO.LoginDTO;
+import com.bosssoft.springcloud.entity.PO.UserInfo;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
@@ -14,15 +12,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 

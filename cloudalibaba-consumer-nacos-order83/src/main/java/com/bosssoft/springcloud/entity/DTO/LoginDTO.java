@@ -1,4 +1,4 @@
-package com.bosssoft.springcloud.DTO;
+package com.bosssoft.springcloud.entity.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

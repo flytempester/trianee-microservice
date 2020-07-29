@@ -1,4 +1,4 @@
-package com.bosssoft.springcloud.PO;
+package com.bosssoft.RBAC.entity.PO;
 
 import lombok.Data;
 
@@ -14,12 +14,14 @@ import java.time.LocalDateTime;
  * @description
  */
 @Data
-@Table(name = "menu_info")
-public class MenuInfoPO {
+@Table(name = "user_info")
+public class UserInfoPO {
     @Id
     private BigInteger id;
     @Column
     private String name;
+    @Column
+    private String password;
     @Column
     private LocalDateTime createTime;
     @Column

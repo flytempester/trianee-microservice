@@ -1,9 +1,11 @@
-package com.bosssoft.springcloud.PO;
+package com.bosssoft.RBAC.entity.PO;
 
 import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 
 /**
@@ -12,9 +14,10 @@ import java.time.LocalDateTime;
  * @description
  */
 @Data
-public class MenuInfo {
+@Table(name = "role_info")
+public class RoleInfoPO {
     @Id
-    private Integer id;
+    private BigInteger id;
     @Column
     private String name;
     @Column

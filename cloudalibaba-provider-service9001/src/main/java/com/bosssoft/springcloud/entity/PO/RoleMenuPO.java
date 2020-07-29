@@ -1,4 +1,4 @@
-package com.bosssoft.RBAC.PO;
+package com.bosssoft.springcloud.entity.PO;
 
 import lombok.Data;
 

@@ -1,7 +1,7 @@
 package com.bosssoft.springcloud.DAO.mapper;
 
-import com.bosssoft.springcloud.PO.RoleMenu;
+import com.bosssoft.springcloud.entity.PO.RoleMenuPO;
 import tk.mybatis.mapper.common.Mapper;
 
-public interface RoleMenuMapper extends Mapper<RoleMenu> {
+public interface RoleMenuMapper extends Mapper<RoleMenuPO> {
 }

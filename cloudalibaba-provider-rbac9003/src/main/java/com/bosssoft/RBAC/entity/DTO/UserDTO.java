@@ -1,4 +1,4 @@
-package com.bosssoft.springcloud.DTO;
+package com.bosssoft.RBAC.entity.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,7 +20,7 @@ public class UserDTO {
     private String disabled;
     private String checked;
 
-    public UserDTO(BigInteger value, String name){
+    public UserDTO(BigInteger value,String name){
         this.value = value;
         this.name = name;
     }

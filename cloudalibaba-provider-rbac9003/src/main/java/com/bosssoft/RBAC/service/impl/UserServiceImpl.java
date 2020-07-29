@@ -1,8 +1,8 @@
 package com.bosssoft.RBAC.service.impl;
 
 import com.bosssoft.RBAC.DAO.mapper.UserInfoMapper;
-import com.bosssoft.RBAC.DTO.UserDTO;
-import com.bosssoft.RBAC.PO.UserInfoPO;
+import com.bosssoft.RBAC.entity.DTO.UserDTO;
+import com.bosssoft.RBAC.entity.PO.UserInfoPO;
 import com.bosssoft.RBAC.service.UserService;
 import org.springframework.stereotype.Service;
 
