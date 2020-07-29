@@ -35,10 +35,10 @@ public class LoginServiceImpl implements LoginService {
                 .setIssuedAt(new Date())
                 .signWith(SignatureAlgorithm.HS256,"zhangdh");
         if(user != null && user.getPassword().equals(password)){
-            return new LoginDTO("/payment/main",builder.compact());
+            return new LoginDTO("/main",builder.compact());
         }
         else {
-            return new LoginDTO("payment/login","");
+            return new LoginDTO("/login","");
         }
     }
 

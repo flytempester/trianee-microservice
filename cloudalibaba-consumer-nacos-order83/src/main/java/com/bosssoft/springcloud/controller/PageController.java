@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class PageController {
 
-    @GetMapping("/payment/{page}")
-    public String toMemberPage(@PathVariable("page") String page)
+    @GetMapping("/{page}")
+    public String toPage(@PathVariable("page") String page)
     {
-        return "/payment/"+page;
+        return page;
     }
 }

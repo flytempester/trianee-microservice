@@ -1,6 +1,6 @@
 spring:
   application:
-    name: nacos-payment-provider
+    name: nacos-service-provider
   cloud:
     nacos:
       discovery:

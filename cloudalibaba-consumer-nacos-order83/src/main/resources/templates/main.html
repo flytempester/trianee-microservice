@@ -57,7 +57,7 @@
 <script src="/static/jquery/jquery-2.1.1.min.js"></script>
 <script src="/static/layui/layui.js" charset="utf-8"></script>
 <script>
-    $.get("/consumer/payment/getMenus",function (data) {
+    $.get("/consumer/getMenus",function (data) {
         console.log(data);
         $("#sidebar_ul").empty();
         var buttons = "";

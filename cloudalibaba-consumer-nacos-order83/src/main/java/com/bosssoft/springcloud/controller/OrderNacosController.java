@@ -43,27 +43,21 @@ public class OrderNacosController
     @Value("${service-url.nacos-user-service}")
     private String serverURL;
 
-    @GetMapping("/consumer/payment/nacos/{id}")
-    public String paymentInfo(@PathVariable("id") Long id)
-    {
-        return restTemplate.getForObject(serverURL+"/payment/nacos/"+id,String.class);
-    }
-
-    @PostMapping("/consumer/payment/login")
+    @PostMapping("/consumer/login")
     public String login(String username, String password){
         UserInfo userInfo = new UserInfo();
         userInfo.setName(username);
         userInfo.setPassword(password);
-        this.loginDTO = restTemplate.postForObject(serverURL + "/payment/login", userInfo, LoginDTO.class);
+        this.loginDTO = restTemplate.postForObject(serverURL + "/login", userInfo, LoginDTO.class);
         return loginDTO.getUrl();
     }
 
-    @GetMapping("/consumer/payment/getMenus")
+    @GetMapping("/consumer/getMenus")
     public Object getMenus(){
         HttpHeaders headers = new HttpHeaders();
         headers.add("token",this.loginDTO.getToken());
         HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);
-        return restTemplate.exchange(serverURL+"/payment/getMenus/"+this.loginDTO.getToken(), HttpMethod.GET, requestEntity, List.class);
+        return restTemplate.exchange(serverURL+"/getMenus/"+this.loginDTO.getToken(), HttpMethod.GET, requestEntity, List.class);
     }
 
     @Test

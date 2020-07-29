@@ -35,19 +35,19 @@ public class LoginController {
     @Value("${service-url.nacos-user-service}")
     private String serverURL;
 
-    @RequestMapping("/payment/login")
+    @RequestMapping("/login")
     @ResponseBody
     public LoginDTO login(@RequestBody UserInfo userInfo) {
         return loginService.login(userInfo.getName(),userInfo.getPassword());
     }
 
 
-    @GetMapping("/payment/getMenus/{token}")
+    @GetMapping("/getMenus/{token}")
     @ResponseBody
     public Object getMenus(@PathVariable String token){
         Claims claims =
                 Jwts.parser().setSigningKey("zhangdh").parseClaimsJws(token).getBody();
         BigInteger id = new BigInteger(claims.getId());
-        return restTemplate.getForObject(serverURL+"/payment/getMenus/"+id, List.class);
+        return restTemplate.getForObject(serverURL+"/getMenus/"+id, List.class);
     }
 }

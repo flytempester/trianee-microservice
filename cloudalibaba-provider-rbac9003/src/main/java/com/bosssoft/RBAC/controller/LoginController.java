@@ -26,16 +26,11 @@ public class LoginController {
     @Resource
     private MenuService menuService;
 
-    @GetMapping("/payment/getMenus/{id}")
+    @GetMapping("/getMenus/{id}")
     @ResponseBody
     public List<MenuInfo> getMenus(@PathVariable("id") BigInteger id)
     {
         return menuService.getMenusByUserId(id);
     }
 
-    @PostMapping("/rbac/login")
-    public String login(String username,String password)
-    {
-        return loginService.login(username,password);
-    }
 }
